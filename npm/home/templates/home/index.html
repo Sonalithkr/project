@@ -1,0 +1,87 @@
+{% extends "home\basic.html" %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+
+{% if messages %}
+<ul class="messages list-unstyled">
+    {% for message in messages %}
+    <li {% if message.tags %}>
+
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong> {{ message }} </strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<main role="main">
+
+
+
+    <div class="jumbotron p-4 mt-4 text-white">
+      <div class="container text-center">
+        <h1 class="display-3 ">ASSIGNMENTS ANYWHERE! 
+
+          {% if user.is_authenticated  %}
+        Welcome {{request.user.last_name}}
+          {% endif %}
+
+        </h1>
+        <p>School teachers, college instructors, and university professors have many things in common - and one of them is homework. If you're looking for a simple way to handle student homework assignments, then our Online Homework Submission Form is the solution you've been searching for. Use it for math homework, Spanish homework, English homework, science homework, and more - one basic online form works for all subjects, making it an ideal solution for school administrators, university directors, and college administrators..</p>
+    
+
+      </div>
+    </div>
+
+    <div class="container mt-4" >
+      <!-- Example row of columns -->
+      <div class="row text-white" style="font-family: Times New Roman; background-color: #c8a2c8">
+        <div class="col-md-4 text-center">
+        <br><br>
+          <h2>Access from anywhere</h2>
+          <br><br>
+          <p>Empower teaching and learning from anywhere, on any device, and give your class more flexibility and mobility.</p>
+           <br><br><br><p><a class="btn btn-outline-dark" href="https://help.blackboard.com/Learn/Student/Ultra/Assignments/Submit_Assignments" role="button">our other websites &raquo;</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+        <br><br>
+          <h2>File Uploads</h2>
+          <br><br>
+          <p>We don’t file away the data you need. Collect all types of files through your form and access them whenever you need to, right from your account. </p>
+          <br><br><p><a class="btn btn-outline-dark" href="https://admission.ignou.ac.in/changeadmdata/statusassignment.ASP" role="button">our other website  &raquo;</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+        <br><br>
+          <h2>Examine student work to ensure authenticity</h2>
+          <br>
+          <p>Compare student work,Make student-to-student comparisons on your domain-owned repository of past submissions  
+</p>
+         
+         <br><br>
+          <p><a class="btn btn-outline-dark" href="https://www.researchgate.net/project/Online-Assignment-Submission-Feedback-System" role="button">our other website &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+    </div> <!-- /container -->
+
+  </main>
+
+  <footer class="container">
+    <p>&copy; Company 2017-2018</p>
+  </footer>
+
+
+{% endblock body %}
